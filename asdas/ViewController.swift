@@ -24,25 +24,25 @@ func foldr<U,T> (initial:U, function: (U,T) -> U, collection: Array<T> ) -> U {
 
 
 func count(array: Array<Int>) -> Int {
-    return foldr(0, function: { (value, currentObject) -> Int in
+    return foldr(0,  { (value, currentObject) -> Int in
         return value + 1
-        }, collection: array)
+        },  array)
 }
 
 
 func sum(array: Array<Int>) -> Int {
-    return foldr(0, function: { (x, y) -> Int in
+    return foldr(0,  { (x, y) -> Int in
         return x + y
-        }, collection: array)
+        },  array)
 }
 
 
 func map(array: Array<Int>) -> Array<Int> {
-    return foldr([], function: { (value, currentObject) -> Array<Int> in
+    return foldr([], { (value, currentObject) -> Array<Int> in
         var mutableArray:Array = value
         mutableArray.append(currentObject  * 2)
         return mutableArray
-        }, collection: array)
+        }, array)
 }
 
 
