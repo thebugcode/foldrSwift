@@ -46,6 +46,17 @@ func map(array: Array<Int>) -> Array<Int> {
 }
 
 
+func filter(array: Array<Int>) -> Array<Int> {
+    return foldr([], function: { (value, currentObject) -> Array<Int> in
+        var mutableArray:Array = value
+        if (currentObject < 3) {
+            mutableArray.append(currentObject)
+        }
+        return mutableArray
+        }, collection: array)
+}
+
+
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
